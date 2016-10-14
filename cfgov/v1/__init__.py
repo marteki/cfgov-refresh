@@ -5,6 +5,7 @@ from urlparse import urlparse
 from django.contrib.staticfiles.storage import staticfiles_storage
 from django.core.urlresolvers import reverse
 from django.template.defaultfilters import pluralize, slugify, linebreaksbr
+from django.utils.module_loading import import_string
 from wagtail.wagtailcore.templatetags import wagtailcore_tags
 from django.contrib import messages
 
@@ -52,6 +53,7 @@ def environment(**options):
         'related_metadata_tags': related_metadata_tags,
         'get_filter_data': get_filter_data,
         'cfgovpage_objects': CFGOVPage.objects,
+        'get_snippets': get_snippets,
     })
 
     env.filters.update({
@@ -198,3 +200,7 @@ def get_filter_data(page):
                                                 'EventArchivePage', 'NewsroomLandingPage']:
             return ancestor.form_id(), ancestor
     return None, None
+
+def get_snippets(snippet_type):
+    snippet_class = import_string(snippet_type)
+    return snippet_class.objects.all()
