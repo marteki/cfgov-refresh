@@ -16,13 +16,21 @@ Given the `MAJOR.MINOR.PATCH` pattern, here is how we decide to increment:
 ## Unreleased
 
 ### Added
-
+- DownStreamCacheControl middleware, which sets the `Edge-Control: no-store` header pages use csrf_token.
 
 ### Changed
 - Fixed issue surrounding table link download / external icons not appearing.
+- Frontend: replaced `documentation` npm module with `jsdoc`.
+- Refactoring email signup to remove validate.js.
+- Frontend: update `browser-sync` to version `2.17.5` from `2.11.2`.
+- Frontend: update `mkdirp` to version `0.5.1` from `0.3.0`.
+- Fixed broken `manage.py check` command when using `cfgov.settings.test`.
+- Update `snyk` to version `1.19.1` from `1.13.2`.
+- Fixed empty `heading` value in link blobs
 
 ### Removed
 - `tax-time-saving` reference in `base.py` (it moved to Wagtail)
+- all references to `django-htmlmin`
 
 
 ## 4.0.0
