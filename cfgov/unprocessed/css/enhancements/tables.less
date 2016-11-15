@@ -87,13 +87,11 @@
   tags:
     - cfgov-cf-enhancements
 */
-@td-bg-mobile: @gray-5;
 @tr-link-color: @white;
 @tr-link-bg-hover: @pacific-80;
 
 
 .o-table {
-
     &__row-links {
       .respond-to-min(961px, {
           tr:hover {
@@ -106,57 +104,8 @@
                   color: @tr-link-color;
               }
           }
-      });
+      } );
     }
-
-    tbody th {
-        border-bottom: 1px solid @thead-bg;
-        padding: unit(10px / @font-size, em);
-        color: @thead-text;
-        background: @thead-bg;
-        .h5();
-        &:first-child {
-          border-top: 1px solid @thead-bg;
-        }
-    }
-
-    .respond-to-max(960px, {
-
-        font-size: 14px;
-
-        thead {
-            display: none;
-        }
-
-        tbody {
-            border-top: none;
-        }
-
-        tr {
-            border-bottom: none;
-        }
-
-        td:first-child {
-            .h4();
-            margin-bottom: 10px;
-            background-color: @td-bg-mobile;
-        }
-
-        td[data-label] {
-            padding-bottom: 20px;
-
-            &:before {
-                .h6();
-                display: block;
-                content: attr(data-label);
-            }
-        }
-
-        &_row-heading {
-            .h4();
-            margin-bottom: 0;
-        }
-    });
 }
 
 
