@@ -17,7 +17,7 @@ Given the `MAJOR.MINOR.PATCH` pattern, here is how we decide to increment:
 
 ### Added
 - DownStreamCacheControl middleware, which sets the `Edge-Control: no-store` header pages use csrf_token.
-- django.middleware.locale.LocaleMiddleware, which controls translation in a current thread context. 
+- django.middleware.locale.LocaleMiddleware, which controls translation in a current thread context.
 
 ### Changed
 - Fixed issue surrounding table link download / external icons not appearing.
@@ -33,6 +33,7 @@ Given the `MAJOR.MINOR.PATCH` pattern, here is how we decide to increment:
 - Picard upgraded to version 1.5.2.
 - Eregs/ip updated to version 1.0.3.
 - Simplified Akamai cache flushing logic to always flush on publish.
+- Removing table organism styles to bring it in alignment with design manual.
 
 ### Removed
 - `tax-time-saving` reference in `base.py` (it moved to Wagtail)
