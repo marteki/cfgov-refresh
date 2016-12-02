@@ -50,7 +50,7 @@
 <div class="m-info-unit
             {{ 'm-info-unit__' ~ value.modifier if value.modifier else '' }}">
 
-    {% if value.image %}
+    {% if value.image.url %}
         {% if value.image.is_decorative %}
         <div class="m-info-unit_image
                     {{ 'm-info-unit_image__square' if value.image.is_square else '' }}"
